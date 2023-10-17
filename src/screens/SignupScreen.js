@@ -16,6 +16,7 @@ import {
   SafeAreaView,
   Pressable,
   Dimensions,
+  ScrollView
 } from "react-native";
 import { useState, useEffect } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -101,14 +102,14 @@ export default function SignupScreen({ navigation }) {
         isValid,
         isSubmitting,
       }) => (
-        <Wrapper>
+        <Wrapper contentContainerStyle={{alignItems: 'center'}}>
           <FormContainer>
             <BackToHome
               onPress={() => {
                 navigation.goBack();
               }}
             >
-              <Image source={backIcon} />
+              <Image source={backIcon} style={{width: 40, height: 40}} />
             </BackToHome>
             <View style={{ marginTop: height * 0.1 }} />
             <Text style={styles.title}>회원가입</Text>
@@ -317,11 +318,11 @@ const styles = StyleSheet.create({
   }
 })
 
-const Wrapper = styled.SafeAreaView`
+const Wrapper = styled.View`
   background-color: white;
   flex: 1;
   height: 100%;
-  align-items: center;
+  // align-items: center;
 `;
 const FormContainer = styled.View`
   padding: 20px;
@@ -349,11 +350,12 @@ const InputTxt = styled.TextInput`
 const SubmitBtn = styled.TouchableOpacity`
   width: 350px;
   height: 44px;
-  bottom: 52px;
+  margin-bottom: 52px;
   //padding: 10px;
   border-radius: 100px;
   justify-content: center;
   align-items: center;
+  align-self: center;
 `;
 
 const CheckBtn = styled.TouchableOpacity`

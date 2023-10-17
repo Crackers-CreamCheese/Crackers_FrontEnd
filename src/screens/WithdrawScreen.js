@@ -95,7 +95,7 @@ export default function WithdrawScreen({ navigation }) {
       }) => (
         <Wrapper>
           <BackToHome onPress={() => navigation.goBack()}>
-            <BackIcon source={backIcon} />
+            <BackIcon source={backIcon} style={{width: 40, height: 40}} />
           </BackToHome>
           <FormContainer>
             <Text style={styles.title}>회원 탈퇴하기</Text>
@@ -171,6 +171,7 @@ const Wrapper = styled.SafeAreaView`
 const FormContainer = styled.View`
   padding: 20px;
   width: 100%;
+  flex: 1;
 `;
 const BackToHome = styled.TouchableOpacity`
   width: 60px;
@@ -194,11 +195,11 @@ const InputTxt = styled.TextInput`
 `;
 
 const SubmitBtn = styled.TouchableOpacity`
-  position: absolute;
   width: 350px;
   height: 44px;
-  bottom: 52px;
+  margin-bottom: 52px;
   border-radius: 100px;
   justify-content: center;
   align-items: center;
+  align-self: center;
 `;

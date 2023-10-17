@@ -54,7 +54,9 @@ export default function SettingScreen({ navigation }) {
       refreshToken: await getItemFromAsync("refreshToken"),
     });
     if (response.status == 200) {
-      clearItemsFromAsync();
+      // clearItemsFromAsync();
+      removeItemFromAsync("accessToken");
+      removeItemFromAsync("refreshToken");
       navigation.navigate("Home");
     } else {
       Alert.alert("로그아웃에 실패했습니다.");
@@ -73,7 +75,7 @@ export default function SettingScreen({ navigation }) {
         }}
       >
         <BackToHome onPress={() => navigation.goBack()}>
-          <Image source={backIcon} />
+          <Image source={backIcon} style={{width: 40, height: 40}} />
         </BackToHome>
         <Text style={styles.title}>설정</Text>
       </View>

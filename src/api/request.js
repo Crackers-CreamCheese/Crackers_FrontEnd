@@ -1,7 +1,7 @@
 import axios from "axios";
 import { setItemToAsync, getItemFromAsync, removeItemFromAsync } from './storage';
 
-const CRACKERS_API_URL = process.env.CRACKERS_API_URL;
+const CRACKERS_API_URL = process.env.EXPO_PUBLIC_API_URL;
 
 export class Request {
     constructor() {
